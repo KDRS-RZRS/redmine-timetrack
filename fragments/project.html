@@ -1,0 +1,28 @@
+<div class="detailview" id="project">
+    <h2>Project {{project.name}}</h2>
+    <div>
+        <span class="label">Description:</span>
+        <span class="value">{{project.description}}</span>
+    </div>
+    <div>
+        <span class="label">Homepage:</span>
+        <span class="value"><a ng-href="{{project.homepage}}">{{project.homepage}}</a></span>
+    </div>
+    <div>
+        <span class="label">Status:</span>
+        <span class="value">{{project.status === 1 ? 'open' : 'closed'}}</span>
+    </div>
+    <div>
+        <span class="label">Identifier:</span>
+        <span class="value">{{project.identifier}}</span>
+    </div>
+    <div>
+        <span class="label">Parent:</span>
+        <span class="value">{{project.parent.id}} {{project.parent.name}}</span>
+    </div>
+    <div class="buttons">
+        <a class="button" href="#/projects/{{project.identifier}}/issues/status/open">Open Issues</a>
+        <a class="button"href="#/projects/{{project.identifier}}/issues/status/close">Closed Issues</a>
+        <a class="button" href="#/projects/{{project.identifier}}/issues/status/*">All Issues</a>
+    </div>
+</div>

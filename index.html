@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>Redmine RESTful</title>
+      <link rel="stylesheet" href="style/style.css" media="screen" type="text/css" />
+  </head>
+  <body>
+    <header ng-controller="headController">
+      <div class="left">
+        <h1>Redmine RESTful Interface</h1>
+        <ul id="nav">
+          <li><a href="#/projects">Projects</a></li>
+          <li ng-hide="hasTimeEntry()"><a href="#/timeentries/new">New Timeentry</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="timeentry" ng-show="hasTimeEntry()">
+          <div class="details">
+            <div>{{timeentry.project.name}}</div>
+            <div>#{{timeentry.issue.id}}: {{timeentry.issue.subject}}</div>
+            <div>{{timeentry.activity.name}}</div>
+            <div><span>{{timeentry.hours | hours}} h</span>
+          </div>
+          <div>
+            <a href="#/timeentries/new">Details</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div ng-view></div>
+    <script src='bower_components/underscore/underscore-min.js'></script>
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src='bower_components/angular-route/angular-route.min.js'></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<div class="issues">
+	<h2>{{issues.length}} Issue{{issues.length > 1 ? 's' : ''}}</h2>
+	<table>
+		<tr ng-repeat="i in issues">
+			<td>#{{i.id}}: {{i.subject}}</td>
+			<td><a ng-href="#/projects/{{i.project.id}}/issues/{{i.id}}">Details</a></td>
+			<td><a target="_new" ng-href="{{getRedmineBaseUrl()}}/issues/{{i.id}}">Open</a></td>
+		</tr>
+	</table>
+</div>

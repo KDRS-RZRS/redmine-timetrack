@@ -1,0 +1,26 @@
+<div class="detailview" id="issue">
+    <h2>Issue #{{issue.id}} {{issue.subject}}</h2>
+    <div>
+        <span class="label">Description:</span>
+        <span class="value">{{issue.description}}</span>
+    </div>
+    <div>
+        <span class="label">Tracker:</span>
+        <span class="value">{{issue.tracker.name}}</span>
+    </div>
+    <div>
+        <span class="label">Status:</span>
+        <span class="value">{{issue.status.name}}</span>
+    </div>
+    <div>
+        <span class="label">Priority:</span>
+        <span class="value">{{issue.priority.name}}</span>
+    </div>
+    <div>
+        <span class="label">Project:</span>
+        <span class="value"><a href="#/projects/{{issue.project.id}}/">{{issue.project.name}}</a></span>
+    </div>
+    <div class="link">
+        <a class="button" href="">Button</a>
+    </div>
+</div>

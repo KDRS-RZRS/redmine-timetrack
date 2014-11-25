@@ -1,0 +1,11 @@
+<div>
+    <table>
+      <tr ng-repeat="p in projects">
+        <td>{{p.name}}</td>
+        <td><a href="#/projects/{{p.identifier}}">Details</a></td>
+        <td><a href="#/projects/{{p.identifier}}/issues/status/open">Open Issues</a></td>
+        <td><a href="#/projects/{{p.identifier}}/issues/status/close">Closed Issues</a></td>
+        <td><a href="#/projects/{{p.identifier}}/issues/status/*">All Issues</a></td>
+      </tr>
+    </table>
+</div>

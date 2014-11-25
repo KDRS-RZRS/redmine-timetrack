@@ -1,0 +1,34 @@
+<div id="timeentry">
+	<h2>New Timeentry</h2>
+	<form novalidate name="timeentryForm">
+		<div class="project">
+			<label for="project">Project</label>
+			<select required ng-model="timeentry.project" id="project" ng-options="project.name for project in projects | orderBy:'name' track by project.id" ng-change="getIssues(timeentry.project);"></select>
+		</div>
+		<div class="issue">
+			<label for="issue">Issue</label>
+			<select required ng-model="timeentry.issue" id="issue" ng-options="issue.subject for issue in issues track by issue.id">
+				<option value="">-- select issue --</option>
+			</select>
+		</div>
+		<div class="hours">
+			<label for="hours">Hours</label>
+			<span ng-show="isTimerRunning();">{{timeentry.hours | hours}} h</span>
+		</div>
+		<div class="activity">
+			<label for="activity">Acitivity</label>
+			<select required ng-model="timeentry.activity" ng-options="activity.name for activity in activities track by activity.id"></select>
+		</div>
+		<div class="comment">
+			<label for="comment">Comment</label>
+			<input required type="text" id="comment" ng-model="timeentry.comment"></input>
+		</div>
+		<div class="buttons">
+			<button ng-show="showStartTimer()" ng-click="startTimer();" class="button">Start Timer</button>
+			<button ng-show="isTimerRunning()" ng-click="stopTimer();" class="button">Stop Timer and Save</button>
+			<button ng-show="showResumeButton()" ng-click="resume();" class="button">Resume</button>
+			<button ng-show="showPauseButton()" ng-click="pause();" class="button">Pause</button>
+			<button ng-click="reset();" class="button">Cancel Timetrack</button>
+		</div>
+	<form>
+</div>

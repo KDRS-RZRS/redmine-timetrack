@@ -1,0 +1,11 @@
+{
+    "name":  "redmine-timetrack",
+    "version": "0.1.0",
+    "dependencies": {
+        "angular": "latest",
+        "angular-route": "latest",
+        "underscore": "latest",
+        "moment": "latest"
+    },
+    "private": true
+}
